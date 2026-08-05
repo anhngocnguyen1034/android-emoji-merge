@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">Emoji Merge</string>
+
+    <!--
+      Thiết kế in cả tiếng Việt và tiếng Anh trên cùng một màn, nên các cặp
+      *_vi / *_en dưới đây là HAI DÒNG HIỂN THỊ ĐỒNG THỜI, không phải bản dịch
+      thay thế nhau. Khi nào tách locale thật thì chuyển các khoá _en sang
+      values-en/ và bỏ dòng phụ đi.
+    -->
+
+    <!-- Splash -->
+    <string name="splash_tagline_vi">Ghép 2 emoji, ra sticker mới</string>
+    <string name="splash_tagline_en">Merge 2 emojis into a new sticker</string>
+    <string name="splash_loading">Đang tải…</string>
+
+    <!-- Home -->
+    <string name="home_greeting">Ghép gì hôm nay?</string>
+    <string name="home_greeting_en">What are we merging today?</string>
+    <string name="home_section_play_vi">Chơi ngay</string>
+    <string name="home_section_play_en">Jump in</string>
+    <string name="home_card_merge_title">Ghép Emoji</string>
+    <string name="home_card_merge_sub">Merge Emoji · chọn 2, ra sticker mới</string>
+    <string name="home_card_games_title">Mini Games</string>
+    <string name="home_card_games_sub">Đoán Emoji &amp; Đố Chữ</string>
+    <string name="home_card_collection_title">Bộ sưu tập</string>
+    <string name="home_card_collection_sub_empty">Collection · chưa có sticker nào</string>
+    <string name="home_card_collection_sub">Collection · %1$d sticker đã lưu</string>
+
+    <!-- Merge -->
+    <string name="merge_title">Ghép Emoji</string>
+    <string name="merge_slot_hint">Chạm để chọn</string>
+    <string name="merge_slot_1">Emoji 1</string>
+    <string name="merge_slot_2">Emoji 2</string>
+    <string name="merge_action">Ghép luôn! ✨</string>
+    <string name="merge_reset">Chọn lại</string>
+    <string name="merge_section_pick_vi">Chọn emoji</string>
+    <string name="merge_section_pick_en">Pick an emoji</string>
+    <string name="merge_no_combo">Cặp này chưa có bản ghép đâu 😅</string>
+
+    <!-- Result -->
+    <string name="result_title">Sticker mới</string>
+    <string name="result_headline">Xong luôn!</string>
+    <string name="result_headline_en">All done!</string>
+    <string name="result_save">Tải về</string>
+    <string name="result_share">Chia sẻ</string>
+    <string name="result_create_new">Ghép tiếp ✨</string>
+    <string name="result_open_collection">Bộ sưu tập</string>
+    <string name="result_saved">Đã lưu vào thư viện 🎉</string>
+    <string name="result_save_failed">Lưu không được, thử lại nhé</string>
+    <string name="result_share_failed">Chia sẻ không được, thử lại nhé</string>
+
+    <!-- Bộ sưu tập -->
+    <string name="collection_title">Bộ sưu tập</string>
+    <string name="collection_count_vi">%1$d sticker</string>
+    <string name="collection_count_en">saved</string>
+    <string name="collection_empty_title">Chưa có gì cả!</string>
+    <string name="collection_empty_body_vi">Ghép hai emoji rồi lưu lại, sticker sẽ nằm ở đây.</string>
+    <string name="collection_empty_body_en">Merge two emojis and they will show up here.</string>
+    <string name="collection_empty_cta">Ghép cái đầu tiên</string>
+    <string name="collection_new_tile">Ghép mới</string>
+
+    <!-- Chi tiết sticker -->
+    <string name="detail_title">Sticker</string>
+    <string name="detail_delete">Xoá</string>
+    <string name="detail_merge_more">Ghép thêm cái nữa ✨</string>
+
+    <!-- Mini Games -->
+    <string name="games_title">Mini Games</string>
+    <string name="games_headline">Chọn kiểu chơi</string>
+    <string name="games_headline_en">Pick a mode</string>
+    <string name="games_guess_title">Đoán Emoji</string>
+    <string name="games_guess_sub">Guess the Emoji · màn %1$d</string>
+    <string name="games_word_title">Emoji Đố Chữ</string>
+    <string name="games_word_sub">Emoji Pictogram · màn %1$d</string>
+
+    <string name="guess_title">Đoán Emoji · Màn %1$d</string>
+    <string name="guess_question_vi">Hai emoji nào tạo ra ảnh này?</string>
+    <string name="guess_question_en">Which two emojis make this?</string>
+    <string name="word_title">Emoji Đố Chữ · Màn %1$d</string>
+    <string name="word_question_vi">Chọn 2 emoji cho từ này</string>
+    <string name="word_question_en">Pick 2 emojis for this word</string>
+    <string name="game_confirm">Chốt đáp án</string>
+
+    <!-- Dialog -->
+    <string name="dialog_exit_title">Thoát app?</string>
+    <string name="dialog_exit_body_vi">Sticker bạn đã lưu vẫn còn nguyên nhé!</string>
+    <string name="dialog_exit_body_en">Your saved stickers are safe.</string>
+    <string name="dialog_exit_confirm">Thoát</string>
+    <string name="dialog_exit_stay">Ở lại chơi</string>
+
+    <string name="dialog_delete_title">Xoá sticker này?</string>
+    <string name="dialog_delete_body_vi">Xoá rồi là mất luôn đó nha 😭</string>
+    <string name="dialog_delete_body_en">This can\'t be undone.</string>
+    <string name="dialog_delete_cancel">Huỷ</string>
+    <string name="dialog_delete_confirm">Xoá</string>
+
+    <string name="dialog_pause_title">Tạm dừng</string>
+    <string name="dialog_pause_body_vi">Thoát ra là mất tiến độ màn này đó.</string>
+    <string name="dialog_pause_body_en">Leaving loses this level\'s progress.</string>
+    <string name="dialog_pause_quit">Thoát</string>
+    <string name="dialog_pause_resume">Chơi tiếp</string>
+
+    <string name="dialog_win_title">Chuẩn luôn!</string>
+    <string name="dialog_win_body_vi">Qua màn rồi, sang màn kế nhé.</string>
+    <string name="dialog_win_body_en">Level cleared. On to the next one.</string>
+    <string name="dialog_win_next">Màn tiếp</string>
+
+    <string name="dialog_lose_title">Hụt mất rồi!</string>
+    <string name="dialog_lose_answer_vi">Đáp án đúng</string>
+    <string name="dialog_lose_answer_en">Correct answer</string>
+    <string name="dialog_lose_home">🏠 Trang chủ</string>
+    <string name="dialog_lose_retry">Thử lại ↺</string>
+</resources>

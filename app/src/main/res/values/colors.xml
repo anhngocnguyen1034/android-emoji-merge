@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nền cửa sổ lúc khởi động, khớp đáy gradient của Compose theme
+         để không nháy sáng trước khi splash vẽ xong. -->
+    <color name="window_ink">#FF12051F</color>
+</resources>
