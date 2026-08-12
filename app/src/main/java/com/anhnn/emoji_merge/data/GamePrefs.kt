@@ -1,6 +1,7 @@
 package com.anhnn.emoji_merge.data
 
 import android.content.Context
+import androidx.core.content.edit
 
 /**
  * Lưu tiến độ mini-game (thay cho `SharedPreferenceUtils` trong project tham khảo).
@@ -12,11 +13,11 @@ class GamePrefs(context: Context) {
 
     var guessEmojiLevel: Int
         get() = prefs.getInt(KEY_GUESS, 1)
-        set(value) = prefs.edit().putInt(KEY_GUESS, value).apply()
+        set(value) = prefs.edit { putInt(KEY_GUESS, value) }
 
     var wordPictogramLevel: Int
         get() = prefs.getInt(KEY_WORD, 1)
-        set(value) = prefs.edit().putInt(KEY_WORD, value).apply()
+        set(value) = prefs.edit { putInt(KEY_WORD, value) }
 
     companion object {
         private const val KEY_GUESS = "guess_emoji_level"
