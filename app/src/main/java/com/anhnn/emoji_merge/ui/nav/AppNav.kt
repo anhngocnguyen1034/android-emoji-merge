@@ -9,12 +9,16 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.anhnn.emoji_merge.data.EmojiMerge
+import com.anhnn.emoji_merge.data.LocalMergeRepository
+import com.anhnn.emoji_merge.data.LocalMergeResult
 import com.anhnn.emoji_merge.ui.collection.CollectionScreen
 import com.anhnn.emoji_merge.ui.collection.EmojiDetailScreen
 import com.anhnn.emoji_merge.ui.games.GamesHubScreen
 import com.anhnn.emoji_merge.ui.games.GuessEmojiScreen
 import com.anhnn.emoji_merge.ui.games.WordPictogramScreen
 import com.anhnn.emoji_merge.ui.home.HomeScreen
+import com.anhnn.emoji_merge.ui.localmerge.LocalMergeResultScreen
+import com.anhnn.emoji_merge.ui.localmerge.LocalMergeScreen
 import com.anhnn.emoji_merge.ui.merge.MergeScreen
 import com.anhnn.emoji_merge.ui.result.ResultScreen
 import com.anhnn.emoji_merge.ui.splash.SplashScreen
@@ -28,12 +32,29 @@ object Routes {
     const val WORD = "word"
     const val COLLECTION = "collection"
 
+    // Tab ghép bộ ảnh riêng (Local Merge)
+    const val LOCAL_MERGE = "local_merge"
+
     const val ARG_ID = "id"
     const val ARG_EMOJI_A = "a"
     const val ARG_EMOJI_B = "b"
+    const val ARG_LOCAL_A_ID = "la"
+    const val ARG_LOCAL_B_ID = "lb"
+    const val ARG_LOCAL_DRAW = "ld"
 
     const val DETAIL = "detail?$ARG_ID={$ARG_ID}"
     const val RESULT = "result?$ARG_ID={$ARG_ID}&$ARG_EMOJI_A={$ARG_EMOJI_A}&$ARG_EMOJI_B={$ARG_EMOJI_B}"
+    const val LOCAL_RESULT = "local_result?$ARG_LOCAL_A_ID={$ARG_LOCAL_A_ID}" +
+        "&$ARG_LOCAL_B_ID={$ARG_LOCAL_B_ID}&$ARG_LOCAL_DRAW={$ARG_LOCAL_DRAW}"
+
+    /**
+     * Result bộ ảnh riêng: chỉ truyền id nguồn + tên drawable kết quả.
+     * Tái tạo [LocalMergeResult] từ repository tại điểm đích.
+     */
+    fun localResult(r: LocalMergeResult) = "local_result" +
+        "?$ARG_LOCAL_A_ID=${Uri.encode(r.sourceA.id)}" +
+        "&$ARG_LOCAL_B_ID=${Uri.encode(r.sourceB.id)}" +
+        "&$ARG_LOCAL_DRAW=${Uri.encode(r.resultDrawable)}"
 
     /**
      * Detail tra lại item từ kho đã lưu nên chỉ cần id.
@@ -70,6 +91,7 @@ fun AppNav(navController: NavHostController = rememberNavController()) {
         composable(Routes.HOME) {
             HomeScreen(
                 onOpenMerge = { navController.navigate(Routes.MERGE) },
+                onOpenLocalMerge = { navController.navigate(Routes.LOCAL_MERGE) },
                 onOpenGames = { navController.navigate(Routes.GAMES) },
                 onOpenCollection = { navController.navigate(Routes.COLLECTION) },
             )
@@ -120,6 +142,50 @@ fun AppNav(navController: NavHostController = rememberNavController()) {
             MergeScreen(
                 onBack = { navController.popBackStack() },
                 onMerged = { result -> navController.navigate(Routes.result(result)) }
+            )
+        }
+
+        composable(Routes.LOCAL_MERGE) {
+            LocalMergeScreen(
+                onBack = { navController.popBackStack() },
+                onMerged = { result -> navController.navigate(Routes.localResult(result)) }
+            )
+        }
+
+        composable(
+            route = Routes.LOCAL_RESULT,
+            arguments = listOf(
+                navArgument(Routes.ARG_LOCAL_A_ID) { type = NavType.StringType; defaultValue = "" },
+                navArgument(Routes.ARG_LOCAL_B_ID) { type = NavType.StringType; defaultValue = "" },
+                navArgument(Routes.ARG_LOCAL_DRAW) { type = NavType.StringType; defaultValue = "" },
+            ),
+        ) { entry ->
+            val args = entry.arguments
+            val aId = args?.getString(Routes.ARG_LOCAL_A_ID).orEmpty()
+            val bId = args?.getString(Routes.ARG_LOCAL_B_ID).orEmpty()
+            val draw = args?.getString(Routes.ARG_LOCAL_DRAW).orEmpty()
+            val sourceA = LocalMergeRepository.sourceById(aId)
+            val sourceB = LocalMergeRepository.sourceById(bId)
+            val result = if (sourceA != null && sourceB != null) {
+                LocalMergeResult(sourceA, sourceB, draw)
+            } else {
+                null
+            }
+            if (result == null) {
+                navController.popBackStack()
+                return@composable
+            }
+            LocalMergeResultScreen(
+                result = result,
+                onBack = { navController.popBackStack() },
+                onHome = {
+                    navController.navigate(Routes.HOME) {
+                        popUpTo(Routes.HOME) { inclusive = true }
+                    }
+                },
+                onCreateNew = {
+                    navController.navigate(Routes.LOCAL_MERGE) { popUpTo(Routes.HOME) }
+                },
             )
         }
 

@@ -37,6 +37,27 @@
     <string name="merge_section_pick_en">Pick an emoji</string>
     <string name="merge_no_combo">Cặp này chưa có bản ghép đâu 😅</string>
 
+    <!-- Local Merge (bộ ảnh riêng) -->
+    <string name="home_card_local_merge_title">Ghép Ảnh Riêng</string>
+    <string name="home_card_local_merge_sub">Local Merge · chọn 2 trong bộ nhân vật, ra ảnh mới</string>
+    <string name="local_merge_title">Ghép ảnh</string>
+    <string name="local_merge_loading">Đang tải bộ ảnh…</string>
+    <string name="local_merge_slot_hint">Chạm để chọn</string>
+    <string name="local_merge_slot_1">Ảnh 1</string>
+    <string name="local_merge_slot_2">Ảnh 2</string>
+    <string name="local_merge_action">Ghép luôn! ✨</string>
+    <string name="local_merge_section_pick_vi">Chọn ảnh</string>
+    <string name="local_merge_section_pick_en">Pick two</string>
+    <string name="local_merge_no_combo">Cặp này chưa có bản ghép đâu 😅</string>
+    <string name="local_result_title">Ảnh mới</string>
+    <string name="local_result_headline">Xong luôn!</string>
+    <string name="local_result_headline_en">All done!</string>
+    <string name="local_result_unsaved_hint">Ảnh kết quả nằm trong bộ sưu tập. Lưu/chia sẻ sẽ bổ sung sau.</string>
+    <string name="local_result_create_new">Ghép tiếp ✨</string>
+    <string name="local_result_back">Quay lại</string>
+    <string name="local_result_missing">Thiếu ảnh kết quả</string>
+    <string name="result_home_desc">Trang chủ</string>
+
     <!-- Result -->
     <string name="result_title">Sticker mới</string>
     <string name="result_headline">Xong luôn!</string>

@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.anhnn.emoji_merge.R
 import com.anhnn.emoji_merge.data.EmojiRepository
+import com.anhnn.emoji_merge.data.LocalMergeRepository
 import com.anhnn.emoji_merge.ui.theme.GlassFillSoft
 import com.anhnn.emoji_merge.ui.theme.Lime
 import com.anhnn.emoji_merge.ui.theme.LimeEnd
@@ -52,10 +53,12 @@ fun SplashScreen(onDone: () -> Unit) {
     val context = LocalContext.current
 
     LaunchedEffect(Unit) {
-        // Nạp dữ liệu emoji song song với thời gian hiển thị splash tối thiểu.
-        val loadJob = launch { EmojiRepository.load(context) }
+        // Nạp dữ liệu emoji + bộ ảnh ghép riêng, song song với splash tối thiểu.
+        val emojiJob = launch { EmojiRepository.load(context) }
+        val localJob = launch { LocalMergeRepository.load(context) }
         delay(1200)
-        loadJob.join()
+        emojiJob.join()
+        localJob.join()
         onDone()
     }
 

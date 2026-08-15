@@ -57,6 +57,7 @@ import com.anhnn.emoji_merge.ui.theme.linearGradientDeg
 @Composable
 fun HomeScreen(
     onOpenMerge: () -> Unit,
+    onOpenLocalMerge: () -> Unit,
     onOpenGames: () -> Unit,
     onOpenCollection: () -> Unit,
 ) {
@@ -112,6 +113,17 @@ fun HomeScreen(
                 shadow = MagentaShadow,
                 onContent = TextPrimary,
                 onClick = onOpenMerge,
+            )
+            Spacer(Modifier.height(12.dp))
+            GradientNavCard(
+                emoji = "🖼️",
+                title = stringResource(R.string.home_card_local_merge_title),
+                subtitle = stringResource(R.string.home_card_local_merge_sub),
+                top = Magenta,
+                bottom = Cyan,
+                shadow = MagentaShadow,
+                onContent = TextPrimary,
+                onClick = onOpenLocalMerge,
             )
             Spacer(Modifier.height(12.dp))
             GradientNavCard(
