@@ -1,0 +1,17 @@
+{
+  "_comment": "Bản đồ cặp ghép local. Key = '<idA>__<idB>' (sắp theo thứ tự từ điển id). Value = tên drawable resource của ảnh kết quả (không kèm đuôi).",
+  "ballerina_capuchina__bombardino_crocodillo": "ballerina_bombardino",
+  "ballerina_capuchina__bombini_gusini": "ballerina_bombini",
+  "ballerina_capuchina__boneca_ambalabu": "ballerina_boneca",
+  "ballerina_capuchina__brr_brr_patapim": "ballerina_brr_brr",
+  "ballerina_capuchina__cappuccino_assassino": "ballerina_cappuccino",
+  "ballerina_capuchina__chimpanzini_bananini": "ballerina_chimpanzini",
+  "ballerina_capuchina__cocofanto_elefanto": "ballerina_cocofanto",
+  "ballerina_capuchina__frigo_camelo": "ballerina_frigo_camelo",
+  "ballerina_capuchina__gorillo_watermellondrillo": "ballerina_gorillo",
+  "ballerina_capuchina__lirili_larila": "ballerina_lirili_larila",
+  "ballerina_capuchina__orangutini_ananasini": "ballerina_orangutini",
+  "ballerina_capuchina__orcalero_orcala_italian": "ballerina_orcalero",
+  "ballerina_capuchina__ta_ta_ta_sahur": "ballerina_ta_ta_ta_sahur",
+  "ballerina_capuchina__tung_tung_tung_sahur": "ballerina_tung_tung_sahur"
+}

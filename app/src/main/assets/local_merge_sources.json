@@ -1,0 +1,17 @@
+[
+  { "id": "ballerina_capuchina", "label": "Ballerina Capuchina", "drawable": "ballerina_capuchina_transparent" },
+  { "id": "bombardino_crocodillo", "label": "Bombardino Crocodillo", "drawable": "bombardino_crocodillo" },
+  { "id": "bombini_gusini", "label": "Bombini Gusini", "drawable": "bombini_gusini" },
+  { "id": "boneca_ambalabu", "label": "Boneca Ambalabu", "drawable": "boneca_ambalabu" },
+  { "id": "brr_brr_patapim", "label": "Brr Brr Patapim", "drawable": "brr_brr_patapim" },
+  { "id": "cappuccino_assassino", "label": "Cappuccino Assassino", "drawable": "cappuccino_assassino" },
+  { "id": "chimpanzini_bananini", "label": "Chimpanzini Bananini", "drawable": "chimpanzini_bananini" },
+  { "id": "cocofanto_elefanto", "label": "Cocofanto Elefanto", "drawable": "cocofanto_elefanto" },
+  { "id": "frigo_camelo", "label": "Frigo Camelo", "drawable": "frigo_camelo" },
+  { "id": "gorillo_watermellondrillo", "label": "Gorillo Watermellondrillo", "drawable": "gorillo_watermellondrillo" },
+  { "id": "lirili_larila", "label": "Lirili Larila", "drawable": "lirili_larila_elephant_in_a_cactus" },
+  { "id": "orangutini_ananasini", "label": "Orangutini Ananasini", "drawable": "orangutini_ananasini" },
+  { "id": "orcalero_orcala_italian", "label": "Orcalero Orcala", "drawable": "orcalero_orcala_italian" },
+  { "id": "ta_ta_ta_sahur", "label": "Ta Ta Ta Sahur", "drawable": "ta_ta_ta_sahur" },
+  { "id": "tung_tung_tung_sahur", "label": "Tung Tung Tung Sahur", "drawable": "tung_tung_tung_sahur" }
+]
