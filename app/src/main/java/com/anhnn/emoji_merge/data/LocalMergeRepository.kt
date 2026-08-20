@@ -28,7 +28,6 @@ object LocalMergeRepository {
     var sources: List<LocalMergeSource> = emptyList()
         private set
 
-    /** idA__idB -> tên drawable ảnh kết quả. */
     @Volatile
     var mergeMap: LocalMergeMap = emptyMap()
         private set
@@ -38,7 +37,6 @@ object LocalMergeRepository {
 
     val isLoaded: Boolean get() = loaded
 
-    /** Nạp nguồn + map ghép từ assets (an toàn gọi nhiều lần, chạy ở IO). */
     suspend fun load(context: Context) = withContext(Dispatchers.IO) {
         if (loaded) return@withContext
         sources = loadSources(context)
@@ -53,7 +51,6 @@ object LocalMergeRepository {
 
     /**
      * Giải tên drawable resource sang int res id. Nếu không thấy trả về 0.
-     * Package đặt "res:///" để tránh trùng với tên trong package hệ thống.
      */
     fun drawableId(context: Context, drawableName: String): Int =
         if (drawableName.isBlank()) 0
