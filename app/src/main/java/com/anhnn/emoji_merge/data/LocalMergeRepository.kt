@@ -58,10 +58,6 @@ object LocalMergeRepository {
             drawableName, "drawable", context.packageName
         )
 
-    /**
-     * Hỏi 2 nguồn đã chọn -> kết quả ghép (nếu cặp này có ảnh kết quả).
-     * Key không phân biệt thứ tự (A+B == B+A).
-     */
     fun resolve(a: LocalMergeSource, b: LocalMergeSource): LocalMergeResult? {
         val key = LocalMergeResult.pairKey(a.id, b.id)
         val resultDrawable = mergeMap[key] ?: return null
