@@ -2,21 +2,12 @@ package com.anhnn.emoji_merge.data
 
 import com.google.gson.annotations.SerializedName
 
-/**
- * Một ảnh nguồn trong bộ merge riêng (asset `local_merge_sources.json`).
- * Người dùng chọn 2 ảnh bất kỳ trong danh sách này để ghép.
- */
 data class LocalMergeSource(
     @SerializedName("id") val id: String = "",
     @SerializedName("label") val label: String = "",
-    // Tên drawable resource (không kèm đuôi). App sẽ đổi ngang bằng nhau sang webp.
     @SerializedName("drawable") val drawable: String = "",
 )
 
-/**
- * Bản đồ cặp ghép: id nguồn A__id nguồn B -> tên drawable của ảnh kết quả.
- * Nạp từ asset `local_merges.json`.
- */
 typealias LocalMergeMap = Map<String, String>
 
 /** Kết quả một lần ghép hợp lệ: hai ảnh nguồn + ảnh kết quả (drawable res). */
